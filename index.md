@@ -26,6 +26,8 @@ Another method that we can use is a random forest. Insteading making decisions b
 ### **Timeline**
 The proposed timeline for our project can be found [here](https://docs.google.com/spreadsheets/d/1HgDW0TEw8-GEcRAKyIbo_yfdCsxbFsD4RhGat9NKrLE/edit#gid=0)
 
+
+### [**Proposal Video**](https://youtu.be/sBiR_8SUITI)
 ### **References**:
 
 - https://www.seattletimes.com/business/real-estate/five-takeaways-from-seattles-red-hot-2021-housing-market/#:~:text=The%20median%20price%20in%20Seattle,for%20%24650%2C000%2C%20up%2022.6%25
