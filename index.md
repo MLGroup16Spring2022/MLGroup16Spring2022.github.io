@@ -18,7 +18,7 @@ A link to the dataset that we will be using can be found [here](https://www.kagg
 
 ### **Model**
 The team is initially thinking about using a decision tree as our starting model choice. A decision tree is composed of a series of decisions that are made based on the features of the input dataset. At a given node in the decision tree, we will make a certain decision and traverse to the correct child of the current node based on the current value of the feature. For instance, as shown in the image below, if the current house has more than two bedrooms, we will predict a higher price for the property, vice versa. 
-![image](dtree_example.png "Title")
+![image](./images/dtree_example.png "Title")
 
 A decision tree is a good starting point since it is relatively easy to implement and is comparatively less time-consuming. It is also effective at working with a large set of data. However, it does face the challenge of overfitting.\
 Another method that we can use is a random forest. Insteading making decisions based on one feature, random forest makes a decision based on several features by constructing several decision trees at the same time. According to research, random forests often generate more accurate results than decision trees, but constructing this model can be complex and the model can be time-expensive to run. The team will focus on implementing the decision tree model first.
@@ -36,3 +36,41 @@ The proposed timeline for our project can be found [here](https://docs.google.co
 - https://medium.com/@feng.cu/machine-learning-decision-tree-model-example-melbourne-house-price-prediction-83a22d16e50
 
 
+## Project Midterm Report
+### Part 2: Importing the dataset and the required packages
+#### Importing all of the packages
+![image](./images/packages.png)
+#### Forming the dataset into pandas dataframes
+![image](./images/dataset.png)
+#### Overall Price Distribution (Shown in a histogram):
+![image](./images/histogram_for_price.png)
+
+
+### Part 2: Data Cleaning and Feature Examination using EDA
+
+#### 2.1 Checking for NaNs
+For many of the features in our training dataset, there exist multiple NaNs throughout the dataset. However, for our dataset, a value of NaN does not mean an absence of data in every case.
+In fact, depending on the feature/column, a value of NaN can either be a valid value, or can represent the absence of valid data. For instance, for the "PoolQC" (the pool quality feature), if the property does not contain a pool, then a value of NA will be used, highlighting the fact that this feature is not applicable. However, for some other features, NaN indicates the a value is missing. The code below prints all of the columns that contain a NaN value somewhere and the exact number of NaN values that the column contains. 
+![image](./images/Nan_count.png) 
+
+Through manul inspection, we have created a dictionary for filling the missing information in our dataset. The keys to this dictionary are the column names in the dataset (only the ones that contain a NaN somewhere, and the values are the values that will replace the NaN.
+
+For columns that contain purely numerical value, e.g. LotFrontage, a missing value, or Nan, will be replaced with 0. For Categorical columns that contain strings as values, NaN will be replaced by a short description of the type of feature that is missing for this column. 
+![image](./images/clean_nan.png)
+
+As shown in the code above, we are able to fill in the missing values in our training dataset. 
+#### 2.2 Feature Engineering using EDA
+** Used the information/tutorial from this [site](https://towardsdatascience.com/visualizing-your-exploratory-data-analysis-d2d6c2e3b30e) **
+
+EDA stands for Exploratory Data Analysis and it is a data analysis approach that examines the relationship between the features. Since our dataset contains a lot of columns, it might be useful for us to examine the correlation/importance of every feature and drop the features that do not play a significant role in housing-price prediction. 
+
+This is a valid and essential approach as it reduces the complexity of our dataset (ultimately our models as well). Additionally, in reality, some features (e.g. number of bedrooms) of a house weigh more to the buyers than some other features (e.g. number of elevators).
+
+The easiest way to visualize the correlation between the features is to use Sns' heatmap, which presents the correlation as a heatmap matrix. The code snippet below performs this function.
+```python
+{
+    plt.figure(figsize=(20, 32))
+    sns.heatmap(housing_df.corr(), annot_kws={"size": 8}, annot = True)
+}
+```
+![image](./images/heatmap.png)
