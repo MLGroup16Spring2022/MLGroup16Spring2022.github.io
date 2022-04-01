@@ -37,7 +37,7 @@ The proposed timeline for our project can be found [here](https://docs.google.co
 
 
 ## Project Midterm Report
-### Part 2: Importing the dataset and the required packages
+### Part 1: Importing the dataset and the required packages
 #### Importing all of the packages
 ![image](./images/packages.png)
 #### Forming the dataset into pandas dataframes
@@ -74,3 +74,43 @@ The easiest way to visualize the correlation between the features is to use Sns'
 }
 ```
 ![image](./images/heatmap.png)
+
+In the heat map above, a positive correlation is represented in lighter colors, whereas a negeative coorrelation is represented in the darker ones.
+
+We now need to examine the correlation between the features and the label, SalePrice:
+![image](./images/corre_with_label.png)
+
+An easy way to reduce the number features in our dataset is to simply select two numerical thresholds, and only select the features where their correlations with the sale price (the absolute value) is within this boundary. For the initial attempt, we will set the minimum threshold to be 0.10 and the maximum threshold to be 0.90.
+![image](./images/feature_reduction.png)
+We are able reduce from 81 columns (1 of the column is the label) into 25 columns. Notice that for our reduced dataset (train_X), all 25 columns are valid features. We are now able to proceed with building our model.
+
+### Part 3: Decision Tree
+
+At this point of the course, we have not yet covered the topic of Decision Tree in lectures. As a result, most of our understandings on this topic come from online websites. For the actual implementation of our decision tree model, we will be using the class DecisionTreeRegressor from Scikit learn. A random seed of 10 will be used to start with.
+
+We will also keep track the time that it took for the decision tree to train. This may be useful later on.
+![image](./images/decision_tree_code.png)
+
+
+### Part 4: Evaluation
+We will begin by determining the difference between the label and the prediction values. This difference will be used for calculating the accuracy.
+
+![image](./images/result.png)
+
+
+### Part 5: Goals/Directions for the next phase of the project
+
+
+*   Implement Random Forest
+*   Include additional metrics/evaluations on Decision Tree Models from lectures 
+
+*   Test, configure and determine the correlation thresholds that maximize the accuracy
+*   Configure the size of the dataset; use alternative ways, e.g. k-fold crooss validation, to test the accuracy
+
+
+
+
+
+
+
+
