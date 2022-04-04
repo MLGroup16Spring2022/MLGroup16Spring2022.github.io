@@ -96,7 +96,7 @@ We will also keep track the time that it took for the decision tree to train. Th
 We will begin by determining the difference between the label and the prediction values. This difference will be used for calculating the accuracy.
 
 ![image](./images/result.png)
-
+![image](./images/result_dist.png)
 
 ### Part 5: Goals/Directions for the next phase of the project
 
