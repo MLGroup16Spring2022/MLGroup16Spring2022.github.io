@@ -94,7 +94,7 @@ We will also keep track the time that it took for the decision tree to train. Th
 
 ### Part 4: Evaluation
 We will begin by determining the difference between the label and the prediction values. This difference will be used for calculating the accuracy.
-
+Currently, we have an accuracy of 98.915%
 ![image](./images/result.png)
 ![image](./images/result_dist.png)
 
