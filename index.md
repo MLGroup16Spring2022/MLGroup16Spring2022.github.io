@@ -108,7 +108,8 @@ Currently, we have an accuracy of 98.915%
 *   Configure the size of the dataset; use alternative ways, e.g. k-fold crooss validation, to test the accuracy
 
 ## Project Final Report
-Background information, problem definition, data collection are the same as stated in proposal and midterm report. 
+*Background information, problem definition, data collection are the same as stated in proposal and midterm report. \
+
 After the midterm checkpoint, we have implemented two new models to train our housing data: Random Forest Model and Multiple Linear Regression Model. The key difference between a Random Forest and a Decision Tree is that a Random Forest uses Random sampling of training data points when building trees and it achieves higher accuracy in theory. We also use K-folds cross validation to test the accuracy of the decision tree model and multiple linear regression model.
 ### Part 1: Random Forest
 ### Part 2: RF Evaluation
