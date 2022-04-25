@@ -110,9 +110,14 @@ Currently, we have an accuracy of 98.915%
 ## Project Final Report
 *Background information, problem definition, data collection are the same as stated in proposal and midterm report. 
 
-After the midterm checkpoint, we have implemented two new models to train our housing data: Random Forest Model and Multiple Linear Regression Model. The key difference between a Random Forest and a Decision Tree is that a Random Forest uses Random sampling of training data points when building trees and it achieves higher accuracy in theory. We also use K-folds cross validation to test the accuracy of the decision tree model and multiple linear regression model.
+After the midterm checkpoint, we have implemented two new models to train our housing data: Random Forest Model and Multiple Linear Regression Model to compare the accuracy between different models and try to find the most accurate way to predict the housing price. The key difference between a Random Forest and a Decision Tree is that a Random Forest uses Random sampling of training data points when building trees and it achieves higher accuracy in theory. We also use K-folds cross validation to test the accuracy of the decision tree model and multiple linear regression model.
 ### Part 1: Random Forest
+For random forest implementation, we choose to use the cleaned but un-reduced housing_df dataset. The dataset will have a shape of (1460, 81) with all 81 features. To make it compatible with the RandomForestClassifier, we use a encoder to transform it.
+![image](./images/rf_dataset.png)
+After cleaning and transform the dataset, we are now able to use the RandomForestClassifier to generate the predicted results. We created the model with 1200 trees and a random state of 35.
+![image](./images/rf_implementation.png)
 ### Part 2: RF Evaluation
+We have determined the difference between the label and the prediction values and calculate the model accuracy based on this difference. Currently, we have an accuracy of 98.628%.
 ![image](./images/rf_eval_code.png)
 ![image](./images/rf_accuracy.png)
 ### Part 3: Multiple Linear Regression
