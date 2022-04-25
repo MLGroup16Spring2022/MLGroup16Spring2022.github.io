@@ -107,7 +107,8 @@ Currently, we have an accuracy of 98.915%
 *   Test, configure and determine the correlation thresholds that maximize the accuracy
 *   Configure the size of the dataset; use alternative ways, e.g. k-fold crooss validation, to test the accuracy
 
-
+## Project Midterm Report
+## New Models
 
 
 
