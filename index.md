@@ -121,7 +121,15 @@ We have determined the difference between the label and the prediction values an
 ![image](./images/rf_eval_code.png)
 ![image](./images/rf_accuracy.png)
 ### Part 3: Multiple Linear Regression
+Multiple Linear regression model could use several explanatory variables to predict our sales price. During Phase II, we filtered our dataset and selected some of the features for a better machine learning training result. Here, we would again use the filtered dataset housing_df for our MLR model with only 25 features. We have presented several 2-D linear regression model from column "MasVnrArea" and "YearBuilt" proving that linear regression works with our dataset.
+![image](./images/mlr_2d_graph.png)
+After we were confident that MLR would work on our dataset, we started to implement the model. We first split the data into train and test data with a random state of 54. As it turns out later in evaluation, this random state produces a extremly high accuracy. We then scaled the each column of our data into [0,1] and then apply MLR to generate the model and produce the predicted result.
+![image](./images/mlr_scaled_code.png)
 ### Part 4: MLR Evaluation
+We calculate R-squared  R2 (coefficient of determination) regression score to see how well our model fits the data or more precisely, measure the scatter of the data points around the fitted regression line. Best possible score is 1.0. But since our data points can be sparse, 0.68 does not mean our model is surely bad or good. We would evaluate the model in more aspects. Since R-squared can't validate our result, we applied K-fold cross validation to check our validation score. We also tried with different K-fold values to check the validation score.
+![image](./images/mlr_cross_validation.png)
+![image](./images/mlr_kfold.png)
+We also calculated the difference between the predicted value and the expected value to calculate the accuracy of our result. As mentioned before, the random state gives us an extremely high accuracy at 99.509%.
 ![image](./images/mlr_eval_code.png)
 ![image](./images/mlr_accuracy.png)
 ### Part 5: Conclusion 
