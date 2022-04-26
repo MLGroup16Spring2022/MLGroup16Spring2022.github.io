@@ -131,7 +131,7 @@ We calculate R-squared  R2 (coefficient of determination) regression score to se
 ![image](./images/mlr_kfold.png)
 We also calculated the difference between the predicted value and the expected value to calculate the accuracy of our result. As mentioned before, the random state gives us an extremely high accuracy at 99.509%.
 ![image](./images/mlr_eval_code.png)
-![image](./images/mlr_accuracy.png)
+![image](./images/accuracy.png)
 ### Part 5: Conclusion 
 Although the accuracy for our old model (Decision tree) is high, we believe that it is beause we have choosed a good reducing method, EDA. By using thie method, we were able to reduced our data from 81 features to 25 price-related featuers, and it turns out these features are actually highly related with the housing price, giving us a 98% accuracy. However, if we reduced the features in an insufficient way, the result will be far from ideal. Therefore, we decided to find a way that can produce high accuracy predicted result without the need to reduce the features. Also, the K-folds cross validation score for our old decision tree model is also not as high.
 ![image](./images/dt_cross_validation.png)
